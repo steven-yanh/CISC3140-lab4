@@ -7,14 +7,18 @@ function getAllCars(){
     return knex("cars").select("*");
 }
 function deleteCar(id){
-    return knex("cars").where("id",id).del();
+    return knex("cars").where("Car_ID",id).del();
 }
 function updateCar(id,car){
-    return knex("cars").where("id",id).update(car)
+    return knex("cars").where("Car_ID",id).update(car)
+}
+function getInfo(id){
+    return knex("cars").select("Car_ID").select("Email").select("Name").where("Car_ID",id)
 }
 module.exports = {
     createCar,
     getAllCars,
     deleteCar,
-    updateCar
+    updateCar,
+    getInfo
 }
