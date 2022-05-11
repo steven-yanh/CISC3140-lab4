@@ -1,0 +1,20 @@
+[
+    {
+    "carid": 1,
+    "fname": "mike",
+    "lname": "jason",
+    "year": 2015,
+    "make": "Acura",
+    "model": "TLX",
+    "score": 18
+    },
+    {
+    "carid": 2,
+    "fname": "steven",
+    "lname": "alex",
+    "year": 2017,
+    "make": "Jeep",
+    "model": "Wrangler",
+    "score": 14
+    }
+]

@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import records from './data.json'
+const url = "http://localhost:8000/cars"
+function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      {
+        records.map( record =>{
+          return(
+            <div className='box' key={record.carid}>
+              carid:{ record.carid}<p>  </p>
+              first name:{ record.fname}<p>  </p>
+              last name:{ record.lname}<p>  </p>
+              make:{ record.make}<p>  </p>
+              model:{record.model}<p>  </p>
+              year:{record.year}<p>  </p>
+              </div>
+          )
+        })
+      }
     </div>
   );
 }

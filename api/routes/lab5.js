@@ -17,6 +17,10 @@ app.post("/cars", async (req,res) =>{
     res.status(201).json({ Car_ID: result[0] } );
 });
 app.get("/cars", async (req,res) => {
+    res.set({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+    });
     const cars = await db.getAllCars();
     res.status(200).json({cars});
 })
