@@ -1,26 +1,34 @@
+import React from "react"
 
-import './App.css';
-import records from './data.json'
-const url = "http://localhost:8000/cars"
-function App(){
-  return (
-    <div className='App'>
-      {
-        records.map( record =>{
-          return(
-            <div className='box' key={record.carid}>
-              carid:{ record.carid}<p>  </p>
-              first name:{ record.fname}<p>  </p>
-              last name:{ record.lname}<p>  </p>
-              make:{ record.make}<p>  </p>
-              model:{record.model}<p>  </p>
-              year:{record.year}<p>  </p>
-              </div>
-          )
-        })
-      }
-    </div>
-  );
+export default class App extends React.Component{
+  state = {
+    loading: true,
+    cars: null,
+  };
+  async componentDidMount(){
+    const url = "http://localhost:8000/cars#"
+    const response = await fetch(url);
+    const data = await response.json();
+    this.setState({car: data.cars[0],loading:false})
+    
+    
+  };
+
+
+  render(){
+    if(this.state.loading){
+      return <div>loading cars...</div>
+
+    }
+    if(!this.state.car){
+      return <div>didn't get the car</div>
+
+    }
+    return (
+      
+      <div>
+        <div>{this.state.car.fname}</div>
+      </div>
+    )
+  }
 }
-
-export default App;
