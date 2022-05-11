@@ -1,0 +1,51 @@
+html{
+    font-size: 1.5em; font-family: 'Times New Roman',serif;
+}
+body{
+    padding: auto;
+    margin: auto;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);
+    background-size: 400%;
+    animation: change 15s ease-in-out infinite;
+}
+nav{
+    margin:auto;
+    padding:auto;
+    margin-top:-25px;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to right,cyan,rgb(0, 250, 175),#ff66d9,#ff8533);
+    background-size: 400%;
+    animation:change 15s ease-in-out infinite
+}
+li{
+    display:inline;
+    font-size: 2em;
+    padding-right: 50px;
+    
+}
+li a{
+    text-decoration: none;
+}
+
+box-shadow{
+    animation: shadow-rainbow 7s ease-in-out infinite;
+}
+
+@keyframes shadow-rainbow{
+    15%{box-shadow:5px 5px 5px red;}
+    30%{box-shadow:5px 5px 5px orange;}
+    45%{box-shadow:5px 5px 5px yellow;}
+    60%{box-shadow:5px 5px 5px green;}
+    75%{box-shadow:5px 5px 5px blue;}
+    90%{box-shadow:5px 5px 5px purple;}
+}
+@keyframes change{
+    0%{background-position:0%,50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+    
+}
+
